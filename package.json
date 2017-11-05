@@ -9,6 +9,6 @@
   "config": {
     "hasCustomUrl": true,
     "hasNotificationSound": true,
-	"hasIndirectMessages": true
+    "hasIndirectMessages": true
   }
 }
