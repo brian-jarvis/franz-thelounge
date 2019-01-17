@@ -1,13 +1,17 @@
 module.exports = Franz => {
 	const getMessages = function getMessages() {
-		let indirectElements = document.querySelectorAll('.badge:not(.highlight)');
-		let direct = document.querySelectorAll('.badge.highlight').length;
-		let indirect = 0;
-		for (let i = 0; i < indirectElements.length; i += 1) {
-			if (indirectElements[i].innerHTML.length > 0) indirect++;
+		//let badgeElements = document.querySelectorAll('.badge');
+		let badgeElements = document.querySelectorAll('.badge.highlight');
+		let totalMessages = 0;
+		for (let i = 0; i < badgeElements.length; i += 1) {
+			if (badgeElements[i].innerHTML.length > 0) {
+				totalMessages = totalMessages + badgeElements[i].innerHTML
+			}
 		}
-		console.log(direct, indirect);
-		Franz.setBadge(direct, indirect);
+
+		console.log(1, parseInt(totalMessages));
+		//Franz.setBadge(direct, indirect);
+		Franz.setBadge(parseInt(totalMessages));
 	};
 	Franz.loop(getMessages);
 };
